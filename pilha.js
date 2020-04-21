@@ -13,6 +13,10 @@ function push(num){
     console.log("Pilha esta vazia")
   }
 } 
+function PVazia(){
+ return topo == -1;
+}
+
 function pop(){
   if(topo != -1){
     //buscar num na posicao do array
@@ -25,12 +29,25 @@ function pop(){
   }
 }
 //-----------parte do codigo que usa a pilha -----//
+console.log("Colocando elementos na pilha")
 push(10);
 push(20);
 push(30)
 console.log(elementos);
-
+console.log("Retirando elementos da pilha")
 console.log(pop());
 console.log(pop())
 console.log(pop())
 console.log(pop())
+//-----usando pilha transforma numero decimal em binario---//
+console.log("Convertendo numero 1000 para binario")
+var numDecimal = 1000;
+var resto;
+while(numDecimal != 0){
+  resto = parseInt(numDecimal%2)
+  push(resto);
+  numDecimal = parseInt(numDecimal/2)
+}
+while(!PVazia()){
+  console.log(pop());
+}
